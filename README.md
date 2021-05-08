@@ -1,4 +1,4 @@
-# xbox-cloud-gaming-wrapper
+# Xbox Cloud Gaming wrapper
 Electron wrapper for Xbox Cloud Gaming (xbox.com/play)
 
 ----
