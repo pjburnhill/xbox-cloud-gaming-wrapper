@@ -12,6 +12,10 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
+  "build": {
+    "appId": "xbox-cloud-gaming-wrapper",
+    "icon": "src/icon.png"
+  },
   "keywords": [],
   "author": {
     "name": "PJ Palomaki",
@@ -28,8 +32,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "xbox_cloud_gaming_wrapper"
-
+            "name": "xbox_cloud_gaming_wrapper",
+            "icon": "assets/icon"
           }
         },
         {
