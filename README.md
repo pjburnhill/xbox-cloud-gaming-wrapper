@@ -30,7 +30,7 @@ npm start
 # Windows - package and create installer to ./out
 npm run make
 
-# OSX - package and create .app to ./out -- Untested!
+# OSX - package and create zip to ./out -- Untested!
 npm run make-mac
 ```
 
