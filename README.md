@@ -1,6 +1,6 @@
 # Xbox Cloud Gaming wrapper
 
-Simple native Electron wrapper for Xbox Cloud Gaming [xbox.com/play](xbox.com/play)
+Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](xbox.com/play))
 
 ## Features
 
