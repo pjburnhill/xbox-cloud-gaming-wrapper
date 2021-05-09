@@ -36,8 +36,6 @@ function toggleFullscreen() {
   }
 }
 
-
-
 // =========================================
 // Init BrowserWindow -- https://www.electronjs.org/docs/api/browser-window
 // =========================================
@@ -48,7 +46,7 @@ function createWindow() {
     height: 720,
     backgroundColor: '#fff',
     center: true,
-    //fullscreen: true,
+    fullscreen: true,
     title: 'Xbox Cloud Gaming',
     icon: appIcon,
     disableAutoHideCursor: true,
@@ -87,7 +85,6 @@ if (!gotTheLock) {
 
   app.whenReady().then(() => {
 
-    app.setUserTasks([]);
     createWindow();
 
 
@@ -104,46 +101,6 @@ if (!gotTheLock) {
     win.on('page-title-updated', (evt) => {
       evt.preventDefault();
     });
-    /*
-      win.on('minimize', function (event) {
-        event.preventDefault();
-        win.hide();
-      });
-
-       win.on('close', function (event) {
-        if (!app.isQuiting) {
-          event.preventDefault();
-          win.hide();
-        }
-        return false;
-      }); */
-
-    // ==============================================
-    // Tray icon -- https://www.electronjs.org/docs/api/tray
-    // ==============================================
-
-    /* 
-      tray = new Tray(appIcon);
-
-      var contextMenu = Menu.buildFromTemplate([
-        {
-          label: 'Quit',
-          click() {
-            app.isQuiting = true;
-            app.quit();
-          }
-        }
-      ]);
-
-      tray.setContextMenu(contextMenu);
-      tray.setToolTip('Xbox Cloud Gaming');
-
-      // Ignore double click events for the tray icon
-      tray.setIgnoreDoubleClickEvents(true);
-
-      // Click tray icon to show window
-      tray.on('click', toggleVisibility);
-     */
 
     // ==================================================
     // Keyboard shortcuts -- https://www.electronjs.org/docs/tutorial/keyboard-shortcuts

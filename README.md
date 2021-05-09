@@ -14,10 +14,16 @@ Simple native Electron wrapper for [xbox.com/play](xbox.com/play)
 
 ## Why?
 
+* Launches full-screen by default, great for "minumum interaction" setups
 * Less memory usage than vanilla Chrome
 * No extensions or other junk
 * Future optimisation via Chromium tweaking
+* Run from thumb drive etc
 * Because..
+
+## Requirements
+
+* Build - [https://nodejs.org/en/](Node.js)
 
 ## Build & Make
 
@@ -38,13 +44,15 @@ npm run make-mac
 
 After ``make`` run the installer in ``./out`` folder
 
-On Windows, the app is installed to ``%LocalAppData%\xbox_cloud_gaming_wrapper\`` and desktop shortcut is added
+On Windows, the app is installed to ``%LocalAppData%\xbox_cloud_gaming_wrapper\`` and a shortcut is added to desktop
 
-Uninstalled via usual windows app uninstall process
+Uninstalled via usual Windows app uninstall process (Settings > Apps)
 
 ## Todo
 
-* Not tested on Mac/Linux
+* Not tested on Linux
 * Find ways to optimise chromium for game streaming (flags etc)
 * Auto updater
-* Some UI fixes (logos etc)
+* Some UI fixes (logos, app name, etc)
+* App signing
+* Releases
