@@ -1,14 +1,10 @@
 # Xbox Cloud Gaming wrapper
-Electron wrapper for Xbox Cloud Gaming (xbox.com/play)
 
-----
-
-## About
-
-Simple native Electron wrapper for [xbox.com/play](xbox.com/play)
+Simple native Electron wrapper for Xbox Cloud Gaming [xbox.com/play](xbox.com/play)
 
 ## Features
 
+* Windows / Mac / Linux(?)
 * Alt-Enter - Toggle fullscreen
 * Escape - Minimize
 
@@ -36,7 +32,7 @@ npm start
 # Windows - package and create installer to ./out
 npm run make
 
-# OSX - package and create zip to ./out -- Untested!
+# OSX - package and create zip to ./out
 npm run make-mac
 ```
 
@@ -51,8 +47,8 @@ Uninstalled via usual Windows app uninstall process (Settings > Apps)
 ## Todo
 
 * Not tested on Linux
-* Find ways to optimise chromium for game streaming (flags etc)
-* Auto updater
+* Find ways to optimize Chromium for game streaming (flags etc)
 * Some UI fixes (logos, app name, etc)
+* Auto updater
 * App signing
 * Releases
