@@ -9,6 +9,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "make-mac": "electron-forge make --platform darwin",
+    "make-mac-aarch": "electron-forge make --platform darwin --arch arm64",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },

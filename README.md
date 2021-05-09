@@ -4,7 +4,7 @@ Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](xbox.com/p
 
 ## Features
 
-* Windows / Mac / Linux(?)
+* Windows / Mac (intel/Apple Silicon) / Linux(?)
 * Alt-Enter - Toggle fullscreen
 * Escape - Minimize
 
@@ -34,6 +34,9 @@ npm run make
 
 # OSX - package and create zip to ./out
 npm run make-mac
+
+# OSX Apple Silicon - package and create zip to ./out
+npm run make-mac-aarch
 ```
 
 ## Install
