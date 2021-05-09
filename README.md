@@ -38,12 +38,13 @@ npm run make-mac
 
 After ``make`` run the installer in ``./out`` folder
 
-On Windows, the app is installed to ``%AppData%\Local\xbox_cloud_gaming_wrapper\``
+On Windows, the app is installed to ``%LocalAppData%\xbox_cloud_gaming_wrapper\`` and desktop shortcut is added
 
 Uninstalled via usual windows app uninstall process
 
 ## Todo
 
 * Not tested on Mac/Linux
-* No desktop shortcut installed at the moment
 * Find ways to optimise chromium for game streaming (flags etc)
+* Auto updater
+* Some UI fixes (logos etc)
