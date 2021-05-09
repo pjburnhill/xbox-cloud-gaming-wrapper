@@ -1,3 +1,6 @@
+// Squirrel startup init (Desktop icon etc)
+if (require('electron-squirrel-startup')) return;
+
 const {
   app,
   globalShortcut,
@@ -10,7 +13,8 @@ const path = require('path')
 
 let win; // container for BrowserWindow
 let tray = null;
-const appIcon = path.join(__dirname, 'icons/win/icon.ico');
+const appIcon = path.join(__dirname, '../assets/icon.ico');
+const gotTheLock = app.requestSingleInstanceLock();
 
 // ===========================================
 // Helper functions
@@ -31,6 +35,8 @@ function toggleFullscreen() {
     win.setFullScreen(true);
   }
 }
+
+
 
 // =========================================
 // Init BrowserWindow -- https://www.electronjs.org/docs/api/browser-window
@@ -60,86 +66,101 @@ function createWindow() {
 
 }
 
-// ====================================================
-// App whenReady -- https://www.electronjs.org/docs/api/app#appwhenready
-// ====================================================
+// =========================================
+// Only single instance allowed -- https://www.electronjs.org/docs/api/app#apprequestsingleinstancelock
+//==========================================
 
-app.whenReady().then(() => {
-
-   app.setUserTasks([]);
-   createWindow();
-
-
-  // ==============================================
-  // Events -- https://www.electronjs.org/docs/api/app#events
-  // ==============================================
-
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
+    if (win) {
+      if (win.isMinimized()) win.restore()
+      win.focus()
     }
-  });
+  })
 
-  win.on('page-title-updated', (evt) => {
-    evt.preventDefault();
-  });
-/*
-  win.on('minimize', function (event) {
-    event.preventDefault();
-    win.hide();
-  });
+  // ====================================================
+  // App whenReady -- https://www.electronjs.org/docs/api/app#appwhenready
+  // ====================================================
 
-   win.on('close', function (event) {
-    if (!app.isQuiting) {
-      event.preventDefault();
-      win.hide();
-    }
-    return false;
-  }); */
+  app.whenReady().then(() => {
 
-  // ==============================================
-  // Tray icon -- https://www.electronjs.org/docs/api/tray
-  // ==============================================
+    app.setUserTasks([]);
+    createWindow();
 
-/* 
-  tray = new Tray(appIcon);
 
-  var contextMenu = Menu.buildFromTemplate([
-    {
-      label: 'Quit',
-      click() {
-        app.isQuiting = true;
-        app.quit();
+    // ==============================================
+    // Events -- https://www.electronjs.org/docs/api/app#events
+    // ==============================================
+
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
       }
-    }
-  ]);
+    });
 
-  tray.setContextMenu(contextMenu);
-  tray.setToolTip('Xbox Cloud Gaming');
+    win.on('page-title-updated', (evt) => {
+      evt.preventDefault();
+    });
+    /*
+      win.on('minimize', function (event) {
+        event.preventDefault();
+        win.hide();
+      });
 
-  // Ignore double click events for the tray icon
-  tray.setIgnoreDoubleClickEvents(true);
+       win.on('close', function (event) {
+        if (!app.isQuiting) {
+          event.preventDefault();
+          win.hide();
+        }
+        return false;
+      }); */
 
-  // Click tray icon to show window
-  tray.on('click', toggleVisibility);
- */
+    // ==============================================
+    // Tray icon -- https://www.electronjs.org/docs/api/tray
+    // ==============================================
 
-  // ==================================================
-  // Keyboard shortcuts -- https://www.electronjs.org/docs/tutorial/keyboard-shortcuts
-  // ==================================================
+    /* 
+      tray = new Tray(appIcon);
 
-  globalShortcut.register('Alt+Enter', () => {
-    toggleFullscreen();
-  })
+      var contextMenu = Menu.buildFromTemplate([
+        {
+          label: 'Quit',
+          click() {
+            app.isQuiting = true;
+            app.quit();
+          }
+        }
+      ]);
 
-  globalShortcut.register('Escape', () => {
-    win.minimize();
-  })
+      tray.setContextMenu(contextMenu);
+      tray.setToolTip('Xbox Cloud Gaming');
+
+      // Ignore double click events for the tray icon
+      tray.setIgnoreDoubleClickEvents(true);
+
+      // Click tray icon to show window
+      tray.on('click', toggleVisibility);
+     */
+
+    // ==================================================
+    // Keyboard shortcuts -- https://www.electronjs.org/docs/tutorial/keyboard-shortcuts
+    // ==================================================
+
+    globalShortcut.register('Alt+Enter', () => {
+      toggleFullscreen();
+    })
+
+    globalShortcut.register('Escape', () => {
+      win.minimize();
+    })
 
 
 
-}); // End app initialised
-
+  }); // End app initialised
+}
 app.on(
   "window-all-closed",
   () => process.platform !== "darwin" && app.quit() // "darwin" targets macOS only.

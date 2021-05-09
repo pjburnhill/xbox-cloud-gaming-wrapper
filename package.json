@@ -21,7 +21,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "src/icons/win/icon.ico",
+        "icon": "assets/icon",
         "name": "Xbox Cloud Gaming"
       },
       "makers": [
