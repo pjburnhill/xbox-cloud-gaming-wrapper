@@ -10,11 +10,10 @@ Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](xbox.com/p
 
 ## Why?
 
-* Launches full-screen by default, great for "minumum interaction" setups
-* Less memory usage than vanilla Chrome
+* Better native experience, i.e. single window, launches full-screen, etc
+* Less memory and CPU/GPU usage than vanilla Chrome, for instance
 * No extensions or other junk
-* Future optimisation via Chromium tweaking
-* Run from thumb drive etc
+* Future optimisation via Electron / Chromium tweaking
 * Because..
 
 ## Requirements
@@ -50,7 +49,7 @@ Uninstalled via usual Windows app uninstall process (Settings > Apps)
 ## Todo
 
 * Not tested on Linux
-* Find ways to optimize Chromium for game streaming (flags etc)
+* Find ways to optimize Chromium / Electron packaging for game streaming (flags etc)
 * Some UI fixes (logos, app name, etc)
 * Auto updater
 * App signing
