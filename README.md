@@ -16,6 +16,11 @@ Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](xbox.com/p
 * Future optimisation via Electron / Chromium tweaking
 * Because..
 
+## Download
+
+* Pre-built binaries for Windows & Mac (Intel x64 and Apple Silicon arm64) are availabe under [Releases](https://github.com/pjburnhill/xbox-cloud-gaming-wrapper/releases)
+* Please be aware that these binaries are not signed so you will have to work around that.. Google is your friend here.
+
 ## Requirements
 
 * Build - [https://nodejs.org/en/](Node.js)
