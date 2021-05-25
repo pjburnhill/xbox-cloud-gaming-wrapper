@@ -28,9 +28,10 @@ Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](https://xb
 ## Build & Make
 
 ```sh
+# install dependencies
 npm install
 
-# run app
+# run app (to test before build)
 npm start
 
 # Windows - package and create installer to ./out
