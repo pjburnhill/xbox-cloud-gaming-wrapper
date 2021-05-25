@@ -46,11 +46,9 @@ npm run make-mac-aarch
 
 ## Install
 
-After ``make`` run the installer in ``./out`` folder
-
-On Windows, the app is installed to ``%LocalAppData%\xbox_cloud_gaming_wrapper\`` and a shortcut is added to desktop
-
-Uninstalled via usual Windows app uninstall process (Settings > Apps)
+* After ``make`` run the installer in ``./out`` folder
+* On Windows, the app is installed to ``%LocalAppData%\xbox_cloud_gaming_wrapper\`` and a shortcut is added to desktop
+* Uninstalled via usual Windows app uninstall process (Settings > Apps)
 
 ## Todo
 
