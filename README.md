@@ -23,7 +23,7 @@ Simple native Electron wrapper for Xbox Cloud Gaming ([xbox.com/play](https://xb
 
 ## Requirements
 
-* Build - [https://nodejs.org/en/](Node.js)
+* Build - [https://nodejs.org/en/](https://nodejs.org/en/)
 
 ## Build & Make
 
